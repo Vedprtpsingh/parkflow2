@@ -1,0 +1,72 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Business Registration | ParkFlow</title>
+    <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+    <%@ include file="topbar.jsp" %>
+    <%@ include file="navbar.jsp" %>
+
+    <div class="container">
+        <div class="auth-container">
+            <h2 class="text-center mb-3">Business Registration</h2>
+
+            <c:if test="${not empty errorMsg}">
+                <div class="message message-error">
+                    <i class="fas fa-exclamation-circle"></i> ${errorMsg}
+                </div>
+            </c:if>
+
+            <form action="/parkflow/businessSignupForm'" method="post" id="businessSignupForm">
+                <input type="hidden" name="role" value="business" />
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="firstName" placeholder="First Name" required />
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="lastName" placeholder="Last Name" required />
+                </div>
+                <div class="input-group">
+                <input type="hidden" name="role" value="business" />
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="firstName" placeholder="First Name" required />
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="lastName" placeholder="Last Name" required />
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email Address" required />
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" name="phoneno" placeholder="Phone Number" required />
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required />
+                </div>
+                <button type="submit" class="btn btn-block mt-3">
+                    <i class="fas fa-user-plus"></i> Register
+                </button>
+            </form>
+
+            <p class="text-center mt-3">
+                Already have a business account? <a href="businessLogin">Log in here</a>
+            </p>
+            <p class="text-center mt-3">
+                <a href="login">Back to User Login</a>
+            </p>
+        </div>
+    </div>
+
+    <%@ include file="footer.jsp" %>
+</body>
+</html>
