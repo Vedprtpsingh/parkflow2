@@ -12,7 +12,7 @@
     <div class="container">
         <h1>Exit Vehicle</h1>
         <!-- Add form or details for vehicle exit here -->
-        <button class="exit-button" onclick="location.href='processExit.jsp'">Click Here For Exit</button>
+        <button class="exit-button" onclick="confirmBarrierOpen()">Click Here For Exit</button>
     </div>
     
     <%@ include file="footer.jsp" %>
